@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface DocuCatButtonProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "text";
   href?: string;
   onClick?: () => void;
   icon?: string;
@@ -32,6 +32,8 @@ export function DocuCatButton({
       "bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc]",
     secondary:
       "border border-solid border-black/[.08] hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]",
+    text:
+      "bg-transparent border-0 text-zinc-950 dark:text-zinc-50 hover:underline w-auto h-auto p-0 rounded-none gap-1 font-medium",
   };
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;

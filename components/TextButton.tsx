@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import { DocuCatButton } from "./DocuCatButton";
 
 interface TextButtonProps {
   children: React.ReactNode;
@@ -31,45 +31,20 @@ export function TextButton({
   target,
   rel,
 }: TextButtonProps) {
-  const textClasses =
-    "inline-flex items-center gap-1 bg-transparent border-0 " +
-    "text-zinc-950 dark:text-zinc-50 " +
-    "hover:underline font-medium transition-all cursor-pointer";
-
-  const classes = `${textClasses} ${className}`;
-
-  const content = (
-    <>
-      {icon && (
-        <Image
-          className="dark:invert"
-          src={icon}
-          alt={iconAlt}
-          width={16}
-          height={16}
-        />
-      )}
-      {children}
-    </>
-  );
-
-  if (href) {
-    return (
-      <a
-        className={classes}
-        href={href}
-        onClick={onClick}
-        target={target}
-        rel={rel}
-      >
-        {content}
-      </a>
-    );
-  }
+  const classes = `inline-flex cursor-pointer transition-all ${className}`;
 
   return (
-    <button className={classes} onClick={onClick}>
-      {content}
-    </button>
+    <DocuCatButton
+      variant="text"
+      href={href}
+      onClick={onClick}
+      icon={icon}
+      iconAlt={iconAlt}
+      className={classes}
+      target={target}
+      rel={rel}
+    >
+      {children}
+    </DocuCatButton>
   );
 }
