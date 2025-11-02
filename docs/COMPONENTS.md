@@ -8,6 +8,10 @@ Versatile button that renders as `<button>` or `<a>` with icon support and two v
 
 **Props:** `children`, `variant?`, `href?`, `onClick?`, `icon?`, `iconAlt?`, `className?`, `target?`, `rel?`
 
+**Variants:**
+- `primary`: Solid background button with full width on mobile, fixed width on desktop
+- `secondary`: Outlined button with subtle border and hover effects
+
 ```tsx
 import { DocuCatButton } from "@/components";
 
